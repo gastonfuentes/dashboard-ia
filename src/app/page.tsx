@@ -28,11 +28,20 @@ export default function Home() {
           onSelectPresentation={setActivePresentationId}
         />
       }
-      header={<DashboardHeader dataset={data} isLoading={isLoading} onRefresh={refresh} />}
+      header={
+        <DashboardHeader
+          dataset={data}
+          isLoading={isLoading}
+          onRefresh={refresh}
+        />
+      }
     >
       <div className="flex flex-col gap-6">
         <div className="lg:hidden">
-          <label className="mb-2 block text-xs font-medium text-muted-foreground" htmlFor="presentation-select">
+          <label
+            className="mb-2 block text-xs font-medium text-muted-foreground"
+            htmlFor="presentation-select"
+          >
             Elegí una presentación
           </label>
           <select
@@ -42,7 +51,10 @@ export default function Home() {
             onChange={(event) => setActivePresentationId(event.target.value)}
           >
             {datasets.map((dataset) => (
-              <option key={dataset.presentationId} value={dataset.presentationId}>
+              <option
+                key={dataset.presentationId}
+                value={dataset.presentationId}
+              >
                 {dataset.presentationTitle}
               </option>
             ))}
@@ -56,12 +68,17 @@ export default function Home() {
         ) : null}
 
         <section className="flex flex-col gap-4">
-          <h3 className="text-lg font-semibold">Indicadores principales</h3>
+          <h3 className="text-lg font-semibold">
+            Indicadores principales jojo
+          </h3>
           <MetricsGrid metrics={data?.metrics ?? []} isLoading={isLoading} />
         </section>
 
         <section className="grid gap-4 lg:grid-cols-2">
-          <PipelineSummary pipeline={data?.pipeline ?? []} isLoading={isLoading} />
+          <PipelineSummary
+            pipeline={data?.pipeline ?? []}
+            isLoading={isLoading}
+          />
           <NpsOverview nps={data?.nps ?? null} isLoading={isLoading} />
         </section>
       </div>
