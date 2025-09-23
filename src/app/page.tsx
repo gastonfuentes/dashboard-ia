@@ -69,7 +69,7 @@ export default function Home() {
 
         <section className="flex flex-col gap-4">
           <h3 className="text-lg font-semibold">
-            Indicadores principales daleee
+            Indicadores principales maverrr
           </h3>
           <MetricsGrid metrics={data?.metrics ?? []} isLoading={isLoading} />
         </section>
